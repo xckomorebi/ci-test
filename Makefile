@@ -1,4 +1,7 @@
-all: libret5.so
+all: libret5.so package
+
+package: main.c
+	$(CC) -o $@ $<
 
 libret5.so: ret5.c
 	$(CC) -shared -o $@ $<
